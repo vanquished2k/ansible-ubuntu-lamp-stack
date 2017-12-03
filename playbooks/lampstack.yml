@@ -1,0 +1,10 @@
+---
+- name: Install Apache, PHP & MYSQL
+  hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: "Install apache2"
+      package: name=apache2 state=present
+    - name: "Install apache2-php7.0"
+      package: name=libapache2-mod-php7.0
